@@ -14,7 +14,7 @@ import com.Transaccion.services.ServicioTransaction;
 
 @RestController
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
-@RequestMapping(path="/api/transaccion")
+@RequestMapping(path="/")
 public class GetTransaccion {
 	
 	@Autowired

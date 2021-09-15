@@ -23,6 +23,33 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <suiteXmlFile>/resources/testNg.xml</suiteXmlFile>
 	</properties>
+
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation> 	  	
+			<properties>
+				<environment>dev</environment>
+				<config.server.uri>http://localhost:8888</config.server.uri>
+			</properties> 
+		</profile>
+		<profile>
+			<id>prod</id>  
+			<properties>
+				<environment>prod</environment>
+				<config.server.uri>http://54.159.180.65:8888</config.server.uri>
+			</properties> 
+		</profile>
+		<profile>
+			<id>test</id>  
+			<properties>
+				<environment>test</environment>
+				<config.server.uri>http://config-server:8888</config.server.uri>
+			</properties> 
+		</profile>
+	</profiles>
 	
 	<dependencies>
 
@@ -34,8 +61,7 @@
             <scope>test</scope>
         </dependency>
 
-
-	<dependency>	
+		<dependency>	
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
@@ -50,29 +76,26 @@
 			<scope>runtime</scope>
 		</dependency>
 		
-	
+		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-eureka-client --> 
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+			<version>3.0.3</version>
+		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-loadbalancer -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-loadbalancer</artifactId>
+			<version>3.0.3</version>
+		</dependency>
 		
-<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-eureka-client --> 
-<!-- <dependency> -->
-<!--     <groupId>org.springframework.cloud</groupId> -->
-<!--     <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId> -->
-<!--     <version>3.0.3</version> -->
-<!-- </dependency> -->
-
-<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-loadbalancer -->
-<!-- <dependency> -->
-<!--     <groupId>org.springframework.cloud</groupId> -->
-<!--     <artifactId>spring-cloud-starter-loadbalancer</artifactId> -->
-<!--     <version>3.0.3</version> -->
-<!-- </dependency> -->
- 
-<!-- https://mvnrepository.com/artifact/de.codecentric/spring-boot-admin-starter-client -->
-<dependency>
-    <groupId>de.codecentric</groupId>
-    <artifactId>spring-boot-admin-starter-client</artifactId>
-    <version>2.5.0</version>
-</dependency>
+		<!-- https://mvnrepository.com/artifact/de.codecentric/spring-boot-admin-starter-client -->
+		<dependency>
+			<groupId>de.codecentric</groupId>
+			<artifactId>spring-boot-admin-starter-client</artifactId>
+			<version>2.5.0</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -91,27 +114,43 @@
 			<version>2.9.2</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+			<version>3.0.3</version> 
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-bootstrap</artifactId>
+			<version>3.0.3</version> 
+		</dependency>
+
 	</dependencies>
 
 	<build>
+		<resources>
+			<resource>
+				<filtering>true</filtering>
+				<directory>src\main\resources</directory>
+			</resource>
+		</resources>
+
 		<plugins>
-		
-		<plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.8.1</version>
-          <configuration>
-            <!-- put your configurations here -->
-          </configuration>
-        </plugin>
-        
-         
+			<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.8.1</version>
+			<configuration>
+				<!-- put your configurations here -->
+			</configuration>
+			</plugin>
         
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		
 		<finalName>spring-boot-docker</finalName>
 	</build>
 
