@@ -9,7 +9,7 @@
 
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<!-- lookup parent from repository -->
+	
 	
 	<groupId>com.Transaccion</groupId>
 	<artifactId>Transaccion</artifactId>
