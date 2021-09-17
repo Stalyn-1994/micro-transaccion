@@ -40,11 +40,10 @@ public class GetTransaccion {
 	}
 
 
-	@GetMapping(path="/hello-world")
+	@GetMapping(path="/test-bank")
 	private String hello_world (){	
-			return "Hello World";			
+			return "Welcome BGR";			
 	}
-	//console.log('Hello');
 	
 }
 
