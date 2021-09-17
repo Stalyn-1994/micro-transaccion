@@ -38,8 +38,13 @@ public class GetTransaccion {
 			return null;
 		}
 	}
-	
+
+
+	@GetMapping(path="/hello-world")
+	private String hello_world (){	
+			return "Hello World";			
+	}
 	
 }
 
-//hello
+//hellogit
