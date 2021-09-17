@@ -1,5 +1,4 @@
 package com.Transaccion.services;
-import java.security.SecureRandom;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,9 +13,7 @@ public class ServicioTransaction {
 	private ServicioTransaccion transacctionResporitory;
 	
 	public String create (transaccionfinal persona) {
-		
-		
-		persona.setEstado((int)(1));
+		persona.setEstado((int)(Math.random()*3 + 1));
 		transacctionResporitory.save(persona);
 		String estado="En proceso";
 		switch (persona.getEstado()) {

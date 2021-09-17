@@ -40,10 +40,10 @@ public class GetTransaccion {
 	}
 
 
-	@GetMapping(path="/hello-world")
-	private String hello_world (){	
-			return "Hello World";			
-	}
+	// @GetMapping(path="/hello-world")
+	// private String hello_world (){	
+	// 		return "Hello World";			
+	// }
 	
 }
 
