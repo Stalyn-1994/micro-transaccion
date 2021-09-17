@@ -44,6 +44,7 @@ public class GetTransaccion {
 	// private String hello_world (){	
 	// 		return "Hello World";			
 	// }
+	//console.log('Hello');
 	
 }
 
