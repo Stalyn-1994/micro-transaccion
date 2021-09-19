@@ -40,11 +40,9 @@ public class GetTransaccion {
 	}
 
 
-	@GetMapping(path="/test-bank")
-	private String hello_world (){	
-			return "Welcome BGR";			
-	}
+	// @GetMapping(path="/test-bank")
+	// private String hello_world (){	
+	// 		return "Welcome BGR";			
+	// }
 	
 }
-
-//hellogit

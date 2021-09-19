@@ -32,21 +32,21 @@
 			</activation> 	  	
 			<properties>
 				<environment>dev</environment>
-				<config.server.uri>http://54.159.180.65:8888</config.server.uri>
+				<config.server.uri>http://3.91.49.66:8888</config.server.uri>
 			</properties> 
 		</profile>
 		<profile>
 			<id>prod</id>  
 			<properties>
 				<environment>prod</environment>
-				<config.server.uri>http://54.159.180.65:8888</config.server.uri>
+				<config.server.uri>http://3.91.49.66:8888</config.server.uri>
 			</properties> 
 		</profile>
 		<profile>
 			<id>test</id>  
 			<properties>
 				<environment>test</environment>
-				<config.server.uri>http://config-server:8888</config.server.uri>
+				<config.server.uri>http://3.91.49.66:8888</config.server.uri>
 			</properties> 
 		</profile>
 	</profiles>
