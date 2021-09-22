@@ -2,7 +2,7 @@ HELP.md
 
 target/*
 #!/target/spring-boot-docker.jar
-#coments sdad sa
+#coments sdad sa prueba
 
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
