@@ -40,9 +40,9 @@ public class GetTransaccion {
 	}
 
 
-	// @GetMapping(path="/testJ")
-	// private String hello_world (){	
-	// 		return "Welcome";			
-	// }
+	@GetMapping(path="/test")
+	private String hello_world (){	
+			return "Welcome Dhiraj and Jorge";			
+	}
 	
 }
