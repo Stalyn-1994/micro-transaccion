@@ -40,9 +40,9 @@ public class GetTransaccion {
 	}
 
 
-	@GetMapping(path="/new-endpoint")
-	private String hello_world (){	
-			return "Hi Everyone";			
-	}
+	// @GetMapping(path="/new-endpoint")
+	// private String hello_world (){	
+	// 		return "Hi Everyone";			
+	// }
 	
 }
