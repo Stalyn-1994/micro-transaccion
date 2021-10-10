@@ -21,18 +21,18 @@ public class GetTransaccion {
 	private ServicioTransaction servicio;
 
 	@GetMapping
-	private ResponseEntity<List<transaccionfinal>> listarTodasLasPersona (){	
+	private ResponseEntity<List<transaccionfinal>> listarTransacciones (){	
 			return ResponseEntity.ok(servicio.getAllPersonas());			
 	}
 
 	
 	@PostMapping
-	private String guardar (@RequestBody transaccionfinal persona){	
+	private String guardarTransacciones (@RequestBody transaccionfinal persona){	
 		
 		String temporal = servicio.create(persona);
 		try {
 			
-				return temporal;				
+			return temporal;				
 			
 		}catch (Exception e) {
 			return null;
@@ -41,7 +41,7 @@ public class GetTransaccion {
 
 
 	// @GetMapping(path="/new-endpoint")
-	// private String hello_world (){	
+	// private String newEndpoint (){	
 	// 		return "Hi Everyone";			
 	// }
 	
